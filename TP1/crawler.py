@@ -165,6 +165,14 @@ def extract_product_features(soup: BeautifulSoup) -> Dict[str, str]:
     """
     Extrait les caractéristiques produit depuis le tableau HTML
     
+    Structure HTML du site :
+    <table class="table-product">
+      <tr class="feature">
+        <td class="feature-label">material</td>
+        <td class="feature-value">Premium quality chocolate</td>
+      </tr>
+    </table>
+    
     Args:
         soup: Objet BeautifulSoup de la page
         
@@ -193,6 +201,14 @@ def extract_product_reviews(soup: BeautifulSoup) -> List[Dict]:
     """
     Extrait les avis produits
     
+    Le site charge les reviews dynamiquement via JavaScript depuis un script JSON.
+    On extrait donc directement depuis le script <script id="reviews-data">.
+    
+    Structure:
+    <script type="application/json" id="reviews-data">
+    [{"date": "2022-07-22", "id": "chocolate-candy-box-1", "rating": 5, "text": "..."}]
+    </script>
+    
     Args:
         soup: Objet BeautifulSoup de la page
         
@@ -201,7 +217,16 @@ def extract_product_reviews(soup: BeautifulSoup) -> List[Dict]:
     """
     reviews = []
     
-    # Recherche des conteneurs d'avis
+    # Methode 1: Extraction depuis le script JSON (pour contenu dynamique)
+    reviews_script = soup.find('script', id='reviews-data')
+    if reviews_script and reviews_script.string:
+        try:
+            reviews = json.loads(reviews_script.string)
+            return reviews
+        except json.JSONDecodeError:
+            pass
+    
+    # Methode 2: Fallback - extraction depuis le HTML rendu (si JavaScript executé)
     review_containers = soup.find_all('div', class_='review')
     
     for container in review_containers:
@@ -216,7 +241,8 @@ def extract_product_reviews(soup: BeautifulSoup) -> List[Dict]:
         classes = container.get('class', [])
         for cls in classes:
             if cls.startswith('review-') and cls != 'review':
-                review['id'] = cls
+                # Nettoyage du préfixe "review-"
+                review['id'] = cls.replace('review-', '', 1)
                 break
         
         # Extraction du rating (nombre d'étoiles SVG)
