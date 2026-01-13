@@ -12,6 +12,7 @@ Indexer system for e-commerce product data, creating inverted indexes to enable 
 - [Installation](#installation)
 - [Usage](#usage)
 - [Examples](#examples)
+- [Code Structure](#code-structure)
 
 ## Overview
 
