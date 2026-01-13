@@ -460,8 +460,8 @@ def main():
     parser.add_argument(
         '--output',
         type=str,
-        default='results/crawled_pages.jsonl',
-        help='Fichier de sortie (defaut: results/crawled_pages.jsonl)'
+        default='output/crawled_pages.jsonl',
+        help='Fichier de sortie (defaut: output/crawled_pages.jsonl)'
     )
     
     args = parser.parse_args()
