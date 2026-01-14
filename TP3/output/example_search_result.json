@@ -1,0 +1,54 @@
+{
+  "query": "chocolate candy",
+  "query_tokens": [
+    "chocolate",
+    "candy"
+  ],
+  "expanded_tokens": [
+    "chocolate",
+    "candy"
+  ],
+  "metadata": {
+    "total_documents": 156,
+    "documents_filtered": 21,
+    "documents_returned": 3,
+    "filter_mode": "any",
+    "ranking_mode": "linear",
+    "use_synonyms": true
+  },
+  "results": [
+    {
+      "url": "https://web-scraping.dev/product/1",
+      "title": "Box of Chocolate Candy",
+      "description": "Whether you're looking for the perfect gift or just want to treat yourself, our box of chocolate candy is sure to satisfy. Each box contains an assortment of rich, flavorful chocolates with a smooth, creamy filling. Indulge your sweet tooth with our box of chocolate candy",
+      "score": 33.62921306794736,
+      "review_stats": {
+        "total_reviews": 5,
+        "mean_mark": 4.6,
+        "last_rating": 4
+      }
+    },
+    {
+      "url": "https://web-scraping.dev/product/13?variant=cherry-small",
+      "title": "Box of Chocolate Candy - Cherry small",
+      "description": "Whether you're looking for the perfect gift or just want to treat yourself, our box of chocolate candy is sure to satisfy. Indulge your sweet tooth with our box of chocolate candy. Each box contains an assortment of rich, flavorful chocolates with a smooth, creamy filling",
+      "score": 33.62921306794736,
+      "review_stats": {
+        "total_reviews": 5,
+        "mean_mark": 4.6,
+        "last_rating": 4
+      }
+    },
+    {
+      "url": "https://web-scraping.dev/product/13?variant=orange-large",
+      "title": "Box of Chocolate Candy - Orange large",
+      "description": "Whether you're looking for the perfect gift or just want to treat yourself, our box of chocolate candy is sure to satisfy. Indulge your sweet tooth with our box of chocolate candy. Each box contains an assortment of rich, flavorful chocolates with a smooth, creamy filling",
+      "score": 33.62921306794736,
+      "review_stats": {
+        "total_reviews": 5,
+        "mean_mark": 4.6,
+        "last_rating": 4
+      }
+    }
+  ]
+}

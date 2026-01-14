@@ -1,0 +1,1820 @@
+{
+  "test_date": "2026-01-14",
+  "total_queries": 7,
+  "configurations_tested": 4,
+  "analyses": [
+    {
+      "query": "chocolate candy",
+      "configurations": [
+        {
+          "name": "Linear Scoring (Default)",
+          "settings": {
+            "name": "Linear Scoring (Default)",
+            "filter_mode": "any",
+            "ranking_mode": "linear",
+            "use_synonyms": true,
+            "top_k": 10
+          },
+          "metadata": {
+            "total_documents": 156,
+            "documents_filtered": 21,
+            "documents_returned": 10,
+            "filter_mode": "any",
+            "ranking_mode": "linear",
+            "use_synonyms": true
+          },
+          "top_5_results": [
+            {
+              "rank": 1,
+              "title": "Box of Chocolate Candy",
+              "url": "https://web-scraping.dev/product/1",
+              "score": 33.63,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.6,
+                "last_rating": 4
+              }
+            },
+            {
+              "rank": 2,
+              "title": "Box of Chocolate Candy - Cherry small",
+              "url": "https://web-scraping.dev/product/13?variant=cherry-small",
+              "score": 33.63,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.6,
+                "last_rating": 4
+              }
+            },
+            {
+              "rank": 3,
+              "title": "Box of Chocolate Candy - Orange large",
+              "url": "https://web-scraping.dev/product/13?variant=orange-large",
+              "score": 33.63,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.6,
+                "last_rating": 4
+              }
+            },
+            {
+              "rank": 4,
+              "title": "Box of Chocolate Candy - Orange small",
+              "url": "https://web-scraping.dev/product/13?variant=orange-small",
+              "score": 33.63,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.6,
+                "last_rating": 4
+              }
+            },
+            {
+              "rank": 5,
+              "title": "Box of Chocolate Candy - Cherry large",
+              "url": "https://web-scraping.dev/product/1?variant=cherry-large",
+              "score": 33.63,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.6,
+                "last_rating": 4
+              }
+            }
+          ]
+        },
+        {
+          "name": "BM25 Scoring",
+          "settings": {
+            "name": "BM25 Scoring",
+            "filter_mode": "any",
+            "ranking_mode": "bm25",
+            "use_synonyms": true,
+            "top_k": 10
+          },
+          "metadata": {
+            "total_documents": 156,
+            "documents_filtered": 21,
+            "documents_returned": 10,
+            "filter_mode": "any",
+            "ranking_mode": "bm25",
+            "use_synonyms": true
+          },
+          "top_5_results": [
+            {
+              "rank": 1,
+              "title": "Box of Chocolate Candy",
+              "url": "https://web-scraping.dev/product/1",
+              "score": 5.58,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.6,
+                "last_rating": 4
+              }
+            },
+            {
+              "rank": 2,
+              "title": "Box of Chocolate Candy - Cherry small",
+              "url": "https://web-scraping.dev/product/13?variant=cherry-small",
+              "score": 5.58,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.6,
+                "last_rating": 4
+              }
+            },
+            {
+              "rank": 3,
+              "title": "Box of Chocolate Candy - Orange large",
+              "url": "https://web-scraping.dev/product/13?variant=orange-large",
+              "score": 5.58,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.6,
+                "last_rating": 4
+              }
+            },
+            {
+              "rank": 4,
+              "title": "Box of Chocolate Candy - Orange small",
+              "url": "https://web-scraping.dev/product/13?variant=orange-small",
+              "score": 5.58,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.6,
+                "last_rating": 4
+              }
+            },
+            {
+              "rank": 5,
+              "title": "Box of Chocolate Candy - Cherry large",
+              "url": "https://web-scraping.dev/product/1?variant=cherry-large",
+              "score": 5.58,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.6,
+                "last_rating": 4
+              }
+            }
+          ]
+        },
+        {
+          "name": "Strict Filtering (All Tokens)",
+          "settings": {
+            "name": "Strict Filtering (All Tokens)",
+            "filter_mode": "all",
+            "ranking_mode": "linear",
+            "use_synonyms": true,
+            "top_k": 10
+          },
+          "metadata": {
+            "total_documents": 156,
+            "documents_filtered": 21,
+            "documents_returned": 10,
+            "filter_mode": "all",
+            "ranking_mode": "linear",
+            "use_synonyms": true
+          },
+          "top_5_results": [
+            {
+              "rank": 1,
+              "title": "Box of Chocolate Candy",
+              "url": "https://web-scraping.dev/product/1",
+              "score": 33.63,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.6,
+                "last_rating": 4
+              }
+            },
+            {
+              "rank": 2,
+              "title": "Box of Chocolate Candy - Cherry small",
+              "url": "https://web-scraping.dev/product/13?variant=cherry-small",
+              "score": 33.63,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.6,
+                "last_rating": 4
+              }
+            },
+            {
+              "rank": 3,
+              "title": "Box of Chocolate Candy - Orange large",
+              "url": "https://web-scraping.dev/product/13?variant=orange-large",
+              "score": 33.63,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.6,
+                "last_rating": 4
+              }
+            },
+            {
+              "rank": 4,
+              "title": "Box of Chocolate Candy - Orange small",
+              "url": "https://web-scraping.dev/product/13?variant=orange-small",
+              "score": 33.63,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.6,
+                "last_rating": 4
+              }
+            },
+            {
+              "rank": 5,
+              "title": "Box of Chocolate Candy - Cherry large",
+              "url": "https://web-scraping.dev/product/1?variant=cherry-large",
+              "score": 33.63,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.6,
+                "last_rating": 4
+              }
+            }
+          ]
+        },
+        {
+          "name": "Review-Focused",
+          "settings": {
+            "name": "Review-Focused",
+            "filter_mode": "any",
+            "ranking_mode": "linear",
+            "use_synonyms": true,
+            "top_k": 10,
+            "weights": {
+              "title_tf": 2.0,
+              "description_tf": 1.0,
+              "title_exact_match": 10.0,
+              "description_exact_match": 5.0,
+              "review_score": 5.0,
+              "review_count": 2.0,
+              "early_position": 1.0,
+              "brand_match": 5.0
+            }
+          },
+          "metadata": {
+            "total_documents": 156,
+            "documents_filtered": 21,
+            "documents_returned": 10,
+            "filter_mode": "any",
+            "ranking_mode": "linear",
+            "use_synonyms": true
+          },
+          "top_5_results": [
+            {
+              "rank": 1,
+              "title": "Box of Chocolate Candy",
+              "url": "https://web-scraping.dev/product/1",
+              "score": 50.42,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.6,
+                "last_rating": 4
+              }
+            },
+            {
+              "rank": 2,
+              "title": "Box of Chocolate Candy - Cherry small",
+              "url": "https://web-scraping.dev/product/13?variant=cherry-small",
+              "score": 50.42,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.6,
+                "last_rating": 4
+              }
+            },
+            {
+              "rank": 3,
+              "title": "Box of Chocolate Candy - Orange large",
+              "url": "https://web-scraping.dev/product/13?variant=orange-large",
+              "score": 50.42,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.6,
+                "last_rating": 4
+              }
+            },
+            {
+              "rank": 4,
+              "title": "Box of Chocolate Candy - Orange small",
+              "url": "https://web-scraping.dev/product/13?variant=orange-small",
+              "score": 50.42,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.6,
+                "last_rating": 4
+              }
+            },
+            {
+              "rank": 5,
+              "title": "Box of Chocolate Candy - Cherry large",
+              "url": "https://web-scraping.dev/product/1?variant=cherry-large",
+              "score": 50.42,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.6,
+                "last_rating": 4
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query": "leather sneakers",
+      "configurations": [
+        {
+          "name": "Linear Scoring (Default)",
+          "settings": {
+            "name": "Linear Scoring (Default)",
+            "filter_mode": "any",
+            "ranking_mode": "linear",
+            "use_synonyms": true,
+            "top_k": 10
+          },
+          "metadata": {
+            "total_documents": 156,
+            "documents_filtered": 24,
+            "documents_returned": 10,
+            "filter_mode": "any",
+            "ranking_mode": "linear",
+            "use_synonyms": true
+          },
+          "top_5_results": [
+            {
+              "rank": 1,
+              "title": "Classic Leather Sneakers",
+              "url": "https://web-scraping.dev/product/11",
+              "score": 34.33,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.4,
+                "last_rating": 5
+              }
+            },
+            {
+              "rank": 2,
+              "title": "Classic Leather Sneakers",
+              "url": "https://web-scraping.dev/product/23",
+              "score": 34.33,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.4,
+                "last_rating": 5
+              }
+            },
+            {
+              "rank": 3,
+              "title": "Classic Leather Sneakers - Black40",
+              "url": "https://web-scraping.dev/product/23?variant=black40",
+              "score": 34.33,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.4,
+                "last_rating": 5
+              }
+            },
+            {
+              "rank": 4,
+              "title": "Classic Leather Sneakers - White40",
+              "url": "https://web-scraping.dev/product/11?variant=white40",
+              "score": 33.33,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.4,
+                "last_rating": 5
+              }
+            },
+            {
+              "rank": 5,
+              "title": "Classic Leather Sneakers - White42",
+              "url": "https://web-scraping.dev/product/11?variant=white42",
+              "score": 33.33,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.4,
+                "last_rating": 5
+              }
+            }
+          ]
+        },
+        {
+          "name": "BM25 Scoring",
+          "settings": {
+            "name": "BM25 Scoring",
+            "filter_mode": "any",
+            "ranking_mode": "bm25",
+            "use_synonyms": true,
+            "top_k": 10
+          },
+          "metadata": {
+            "total_documents": 156,
+            "documents_filtered": 24,
+            "documents_returned": 10,
+            "filter_mode": "any",
+            "ranking_mode": "bm25",
+            "use_synonyms": true
+          },
+          "top_5_results": [
+            {
+              "rank": 1,
+              "title": "Classic Leather Sneakers",
+              "url": "https://web-scraping.dev/product/11",
+              "score": 6.21,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.4,
+                "last_rating": 5
+              }
+            },
+            {
+              "rank": 2,
+              "title": "Classic Leather Sneakers",
+              "url": "https://web-scraping.dev/product/23",
+              "score": 6.21,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.4,
+                "last_rating": 5
+              }
+            },
+            {
+              "rank": 3,
+              "title": "Classic Leather Sneakers - Black40",
+              "url": "https://web-scraping.dev/product/23?variant=black40",
+              "score": 6.21,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.4,
+                "last_rating": 5
+              }
+            },
+            {
+              "rank": 4,
+              "title": "Classic Leather Sneakers - White40",
+              "url": "https://web-scraping.dev/product/11?variant=white40",
+              "score": 6.16,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.4,
+                "last_rating": 5
+              }
+            },
+            {
+              "rank": 5,
+              "title": "Classic Leather Sneakers - White42",
+              "url": "https://web-scraping.dev/product/11?variant=white42",
+              "score": 6.16,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.4,
+                "last_rating": 5
+              }
+            }
+          ]
+        },
+        {
+          "name": "Strict Filtering (All Tokens)",
+          "settings": {
+            "name": "Strict Filtering (All Tokens)",
+            "filter_mode": "all",
+            "ranking_mode": "linear",
+            "use_synonyms": true,
+            "top_k": 10
+          },
+          "metadata": {
+            "total_documents": 156,
+            "documents_filtered": 14,
+            "documents_returned": 10,
+            "filter_mode": "all",
+            "ranking_mode": "linear",
+            "use_synonyms": true
+          },
+          "top_5_results": [
+            {
+              "rank": 1,
+              "title": "Classic Leather Sneakers",
+              "url": "https://web-scraping.dev/product/11",
+              "score": 34.33,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.4,
+                "last_rating": 5
+              }
+            },
+            {
+              "rank": 2,
+              "title": "Classic Leather Sneakers",
+              "url": "https://web-scraping.dev/product/23",
+              "score": 34.33,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.4,
+                "last_rating": 5
+              }
+            },
+            {
+              "rank": 3,
+              "title": "Classic Leather Sneakers - Black40",
+              "url": "https://web-scraping.dev/product/23?variant=black40",
+              "score": 34.33,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.4,
+                "last_rating": 5
+              }
+            },
+            {
+              "rank": 4,
+              "title": "Classic Leather Sneakers - White40",
+              "url": "https://web-scraping.dev/product/11?variant=white40",
+              "score": 33.33,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.4,
+                "last_rating": 5
+              }
+            },
+            {
+              "rank": 5,
+              "title": "Classic Leather Sneakers - White42",
+              "url": "https://web-scraping.dev/product/11?variant=white42",
+              "score": 33.33,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.4,
+                "last_rating": 5
+              }
+            }
+          ]
+        },
+        {
+          "name": "Review-Focused",
+          "settings": {
+            "name": "Review-Focused",
+            "filter_mode": "any",
+            "ranking_mode": "linear",
+            "use_synonyms": true,
+            "top_k": 10,
+            "weights": {
+              "title_tf": 2.0,
+              "description_tf": 1.0,
+              "title_exact_match": 10.0,
+              "description_exact_match": 5.0,
+              "review_score": 5.0,
+              "review_count": 2.0,
+              "early_position": 1.0,
+              "brand_match": 5.0
+            }
+          },
+          "metadata": {
+            "total_documents": 156,
+            "documents_filtered": 24,
+            "documents_returned": 10,
+            "filter_mode": "any",
+            "ranking_mode": "linear",
+            "use_synonyms": true
+          },
+          "top_5_results": [
+            {
+              "rank": 1,
+              "title": "Classic Leather Sneakers",
+              "url": "https://web-scraping.dev/product/11",
+              "score": 50.42,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.4,
+                "last_rating": 5
+              }
+            },
+            {
+              "rank": 2,
+              "title": "Classic Leather Sneakers",
+              "url": "https://web-scraping.dev/product/23",
+              "score": 50.42,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.4,
+                "last_rating": 5
+              }
+            },
+            {
+              "rank": 3,
+              "title": "Classic Leather Sneakers - Black40",
+              "url": "https://web-scraping.dev/product/23?variant=black40",
+              "score": 50.42,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.4,
+                "last_rating": 5
+              }
+            },
+            {
+              "rank": 4,
+              "title": "Classic Leather Sneakers - White40",
+              "url": "https://web-scraping.dev/product/11?variant=white40",
+              "score": 49.42,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.4,
+                "last_rating": 5
+              }
+            },
+            {
+              "rank": 5,
+              "title": "Classic Leather Sneakers - White42",
+              "url": "https://web-scraping.dev/product/11?variant=white42",
+              "score": 49.42,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.4,
+                "last_rating": 5
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query": "energy drink",
+      "configurations": [
+        {
+          "name": "Linear Scoring (Default)",
+          "settings": {
+            "name": "Linear Scoring (Default)",
+            "filter_mode": "any",
+            "ranking_mode": "linear",
+            "use_synonyms": true,
+            "top_k": 10
+          },
+          "metadata": {
+            "total_documents": 156,
+            "documents_filtered": 39,
+            "documents_returned": 10,
+            "filter_mode": "any",
+            "ranking_mode": "linear",
+            "use_synonyms": true
+          },
+          "top_5_results": [
+            {
+              "rank": 1,
+              "title": "Blue Energy Potion - One",
+              "url": "https://web-scraping.dev/product/5?variant=one",
+              "score": 23.3,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.6,
+                "last_rating": 5
+              }
+            },
+            {
+              "rank": 2,
+              "title": "Blue Energy Potion",
+              "url": "https://web-scraping.dev/product/17",
+              "score": 22.3,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.6,
+                "last_rating": 5
+              }
+            },
+            {
+              "rank": 3,
+              "title": "Blue Energy Potion - One",
+              "url": "https://web-scraping.dev/product/17?variant=one",
+              "score": 22.3,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.6,
+                "last_rating": 5
+              }
+            },
+            {
+              "rank": 4,
+              "title": "Blue Energy Potion - Six pack",
+              "url": "https://web-scraping.dev/product/17?variant=six-pack",
+              "score": 22.3,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.6,
+                "last_rating": 5
+              }
+            },
+            {
+              "rank": 5,
+              "title": "Blue Energy Potion",
+              "url": "https://web-scraping.dev/product/5",
+              "score": 22.3,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.6,
+                "last_rating": 5
+              }
+            }
+          ]
+        },
+        {
+          "name": "BM25 Scoring",
+          "settings": {
+            "name": "BM25 Scoring",
+            "filter_mode": "any",
+            "ranking_mode": "bm25",
+            "use_synonyms": true,
+            "top_k": 10
+          },
+          "metadata": {
+            "total_documents": 156,
+            "documents_filtered": 39,
+            "documents_returned": 10,
+            "filter_mode": "any",
+            "ranking_mode": "bm25",
+            "use_synonyms": true
+          },
+          "top_5_results": [
+            {
+              "rank": 1,
+              "title": "Blue Energy Potion - One",
+              "url": "https://web-scraping.dev/product/5?variant=one",
+              "score": 4.94,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.6,
+                "last_rating": 5
+              }
+            },
+            {
+              "rank": 2,
+              "title": "Blue Energy Potion",
+              "url": "https://web-scraping.dev/product/17",
+              "score": 4.93,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.6,
+                "last_rating": 5
+              }
+            },
+            {
+              "rank": 3,
+              "title": "Blue Energy Potion - One",
+              "url": "https://web-scraping.dev/product/17?variant=one",
+              "score": 4.93,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.6,
+                "last_rating": 5
+              }
+            },
+            {
+              "rank": 4,
+              "title": "Blue Energy Potion - Six pack",
+              "url": "https://web-scraping.dev/product/17?variant=six-pack",
+              "score": 4.93,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.6,
+                "last_rating": 5
+              }
+            },
+            {
+              "rank": 5,
+              "title": "Blue Energy Potion",
+              "url": "https://web-scraping.dev/product/5",
+              "score": 4.93,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.6,
+                "last_rating": 5
+              }
+            }
+          ]
+        },
+        {
+          "name": "Strict Filtering (All Tokens)",
+          "settings": {
+            "name": "Strict Filtering (All Tokens)",
+            "filter_mode": "all",
+            "ranking_mode": "linear",
+            "use_synonyms": true,
+            "top_k": 10
+          },
+          "metadata": {
+            "total_documents": 156,
+            "documents_filtered": 32,
+            "documents_returned": 10,
+            "filter_mode": "all",
+            "ranking_mode": "linear",
+            "use_synonyms": true
+          },
+          "top_5_results": [
+            {
+              "rank": 1,
+              "title": "Blue Energy Potion - One",
+              "url": "https://web-scraping.dev/product/5?variant=one",
+              "score": 23.3,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.6,
+                "last_rating": 5
+              }
+            },
+            {
+              "rank": 2,
+              "title": "Blue Energy Potion",
+              "url": "https://web-scraping.dev/product/17",
+              "score": 22.3,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.6,
+                "last_rating": 5
+              }
+            },
+            {
+              "rank": 3,
+              "title": "Blue Energy Potion - One",
+              "url": "https://web-scraping.dev/product/17?variant=one",
+              "score": 22.3,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.6,
+                "last_rating": 5
+              }
+            },
+            {
+              "rank": 4,
+              "title": "Blue Energy Potion - Six pack",
+              "url": "https://web-scraping.dev/product/17?variant=six-pack",
+              "score": 22.3,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.6,
+                "last_rating": 5
+              }
+            },
+            {
+              "rank": 5,
+              "title": "Blue Energy Potion",
+              "url": "https://web-scraping.dev/product/5",
+              "score": 22.3,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.6,
+                "last_rating": 5
+              }
+            }
+          ]
+        },
+        {
+          "name": "Review-Focused",
+          "settings": {
+            "name": "Review-Focused",
+            "filter_mode": "any",
+            "ranking_mode": "linear",
+            "use_synonyms": true,
+            "top_k": 10,
+            "weights": {
+              "title_tf": 2.0,
+              "description_tf": 1.0,
+              "title_exact_match": 10.0,
+              "description_exact_match": 5.0,
+              "review_score": 5.0,
+              "review_count": 2.0,
+              "early_position": 1.0,
+              "brand_match": 5.0
+            }
+          },
+          "metadata": {
+            "total_documents": 156,
+            "documents_filtered": 39,
+            "documents_returned": 10,
+            "filter_mode": "any",
+            "ranking_mode": "linear",
+            "use_synonyms": true
+          },
+          "top_5_results": [
+            {
+              "rank": 1,
+              "title": "Blue Energy Potion - One",
+              "url": "https://web-scraping.dev/product/5?variant=one",
+              "score": 41.08,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.6,
+                "last_rating": 5
+              }
+            },
+            {
+              "rank": 2,
+              "title": "Blue Energy Potion",
+              "url": "https://web-scraping.dev/product/17",
+              "score": 40.08,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.6,
+                "last_rating": 5
+              }
+            },
+            {
+              "rank": 3,
+              "title": "Blue Energy Potion - One",
+              "url": "https://web-scraping.dev/product/17?variant=one",
+              "score": 40.08,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.6,
+                "last_rating": 5
+              }
+            },
+            {
+              "rank": 4,
+              "title": "Blue Energy Potion - Six pack",
+              "url": "https://web-scraping.dev/product/17?variant=six-pack",
+              "score": 40.08,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.6,
+                "last_rating": 5
+              }
+            },
+            {
+              "rank": 5,
+              "title": "Blue Energy Potion",
+              "url": "https://web-scraping.dev/product/5",
+              "score": 40.08,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.6,
+                "last_rating": 5
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query": "made in italy",
+      "configurations": [
+        {
+          "name": "Linear Scoring (Default)",
+          "settings": {
+            "name": "Linear Scoring (Default)",
+            "filter_mode": "any",
+            "ranking_mode": "linear",
+            "use_synonyms": true,
+            "top_k": 10
+          },
+          "metadata": {
+            "total_documents": 156,
+            "documents_filtered": 20,
+            "documents_returned": 10,
+            "filter_mode": "any",
+            "ranking_mode": "linear",
+            "use_synonyms": true
+          },
+          "top_5_results": [
+            {
+              "rank": 1,
+              "title": "Classic Leather Sneakers",
+              "url": "https://web-scraping.dev/product/11",
+              "score": 8.5,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.4,
+                "last_rating": 5
+              }
+            },
+            {
+              "rank": 2,
+              "title": "Classic Leather Sneakers - Black40",
+              "url": "https://web-scraping.dev/product/11?variant=black40",
+              "score": 8.5,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.4,
+                "last_rating": 5
+              }
+            },
+            {
+              "rank": 3,
+              "title": "Classic Leather Sneakers - Black41",
+              "url": "https://web-scraping.dev/product/11?variant=black41",
+              "score": 8.5,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.4,
+                "last_rating": 5
+              }
+            },
+            {
+              "rank": 4,
+              "title": "Classic Leather Sneakers - Black42",
+              "url": "https://web-scraping.dev/product/11?variant=black42",
+              "score": 8.5,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.4,
+                "last_rating": 5
+              }
+            },
+            {
+              "rank": 5,
+              "title": "Classic Leather Sneakers - White40",
+              "url": "https://web-scraping.dev/product/11?variant=white40",
+              "score": 8.5,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.4,
+                "last_rating": 5
+              }
+            }
+          ]
+        },
+        {
+          "name": "BM25 Scoring",
+          "settings": {
+            "name": "BM25 Scoring",
+            "filter_mode": "any",
+            "ranking_mode": "bm25",
+            "use_synonyms": true,
+            "top_k": 10
+          },
+          "metadata": {
+            "total_documents": 156,
+            "documents_filtered": 20,
+            "documents_returned": 10,
+            "filter_mode": "any",
+            "ranking_mode": "bm25",
+            "use_synonyms": true
+          },
+          "top_5_results": [
+            {
+              "rank": 1,
+              "title": "Kids' Light-Up Sneakers",
+              "url": "https://web-scraping.dev/product/10",
+              "score": 3.64,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.2,
+                "last_rating": 4
+              }
+            },
+            {
+              "rank": 2,
+              "title": "Kids' Light-Up Sneakers - Blue 5",
+              "url": "https://web-scraping.dev/product/10?variant=blue-5",
+              "score": 3.64,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.2,
+                "last_rating": 4
+              }
+            },
+            {
+              "rank": 3,
+              "title": "Kids' Light-Up Sneakers - Blue 6",
+              "url": "https://web-scraping.dev/product/10?variant=blue-6",
+              "score": 3.64,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.2,
+                "last_rating": 4
+              }
+            },
+            {
+              "rank": 4,
+              "title": "Kids' Light-Up Sneakers - Red 5",
+              "url": "https://web-scraping.dev/product/10?variant=red-5",
+              "score": 3.64,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.2,
+                "last_rating": 4
+              }
+            },
+            {
+              "rank": 5,
+              "title": "Kids' Light-Up Sneakers - Red 6",
+              "url": "https://web-scraping.dev/product/10?variant=red-6",
+              "score": 3.64,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.2,
+                "last_rating": 4
+              }
+            }
+          ]
+        },
+        {
+          "name": "Strict Filtering (All Tokens)",
+          "settings": {
+            "name": "Strict Filtering (All Tokens)",
+            "filter_mode": "all",
+            "ranking_mode": "linear",
+            "use_synonyms": true,
+            "top_k": 10
+          },
+          "metadata": {
+            "total_documents": 156,
+            "documents_filtered": 0,
+            "documents_returned": 0,
+            "filter_mode": "all",
+            "ranking_mode": "linear",
+            "use_synonyms": true
+          },
+          "top_5_results": []
+        },
+        {
+          "name": "Review-Focused",
+          "settings": {
+            "name": "Review-Focused",
+            "filter_mode": "any",
+            "ranking_mode": "linear",
+            "use_synonyms": true,
+            "top_k": 10,
+            "weights": {
+              "title_tf": 2.0,
+              "description_tf": 1.0,
+              "title_exact_match": 10.0,
+              "description_exact_match": 5.0,
+              "review_score": 5.0,
+              "review_count": 2.0,
+              "early_position": 1.0,
+              "brand_match": 5.0
+            }
+          },
+          "metadata": {
+            "total_documents": 156,
+            "documents_filtered": 20,
+            "documents_returned": 10,
+            "filter_mode": "any",
+            "ranking_mode": "linear",
+            "use_synonyms": true
+          },
+          "top_5_results": [
+            {
+              "rank": 1,
+              "title": "Classic Leather Sneakers",
+              "url": "https://web-scraping.dev/product/11",
+              "score": 26.58,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.4,
+                "last_rating": 5
+              }
+            },
+            {
+              "rank": 2,
+              "title": "Classic Leather Sneakers - Black40",
+              "url": "https://web-scraping.dev/product/11?variant=black40",
+              "score": 26.58,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.4,
+                "last_rating": 5
+              }
+            },
+            {
+              "rank": 3,
+              "title": "Classic Leather Sneakers - Black41",
+              "url": "https://web-scraping.dev/product/11?variant=black41",
+              "score": 26.58,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.4,
+                "last_rating": 5
+              }
+            },
+            {
+              "rank": 4,
+              "title": "Classic Leather Sneakers - Black42",
+              "url": "https://web-scraping.dev/product/11?variant=black42",
+              "score": 26.58,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.4,
+                "last_rating": 5
+              }
+            },
+            {
+              "rank": 5,
+              "title": "Classic Leather Sneakers - White40",
+              "url": "https://web-scraping.dev/product/11?variant=white40",
+              "score": 26.58,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.4,
+                "last_rating": 5
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query": "kids light up shoes",
+      "configurations": [
+        {
+          "name": "Linear Scoring (Default)",
+          "settings": {
+            "name": "Linear Scoring (Default)",
+            "filter_mode": "any",
+            "ranking_mode": "linear",
+            "use_synonyms": true,
+            "top_k": 10
+          },
+          "metadata": {
+            "total_documents": 156,
+            "documents_filtered": 20,
+            "documents_returned": 10,
+            "filter_mode": "any",
+            "ranking_mode": "linear",
+            "use_synonyms": true
+          },
+          "top_5_results": [
+            {
+              "rank": 1,
+              "title": "Kids' Light-Up Sneakers - Blue 6",
+              "url": "https://web-scraping.dev/product/10?variant=blue-6",
+              "score": 13.2,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.2,
+                "last_rating": 4
+              }
+            },
+            {
+              "rank": 2,
+              "title": "Kids' Light-Up Sneakers",
+              "url": "https://web-scraping.dev/product/22",
+              "score": 13.2,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.2,
+                "last_rating": 4
+              }
+            },
+            {
+              "rank": 3,
+              "title": "Kids' Light-Up Sneakers - Blue 6",
+              "url": "https://web-scraping.dev/product/22?variant=blue-6",
+              "score": 13.2,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.2,
+                "last_rating": 4
+              }
+            },
+            {
+              "rank": 4,
+              "title": "Running Shoes for Men",
+              "url": "https://web-scraping.dev/product/21",
+              "score": 12.7,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.2,
+                "last_rating": 4
+              }
+            },
+            {
+              "rank": 5,
+              "title": "Running Shoes for Men - 11",
+              "url": "https://web-scraping.dev/product/21?variant=11",
+              "score": 12.7,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.2,
+                "last_rating": 4
+              }
+            }
+          ]
+        },
+        {
+          "name": "BM25 Scoring",
+          "settings": {
+            "name": "BM25 Scoring",
+            "filter_mode": "any",
+            "ranking_mode": "bm25",
+            "use_synonyms": true,
+            "top_k": 10
+          },
+          "metadata": {
+            "total_documents": 156,
+            "documents_filtered": 20,
+            "documents_returned": 10,
+            "filter_mode": "any",
+            "ranking_mode": "bm25",
+            "use_synonyms": true
+          },
+          "top_5_results": [
+            {
+              "rank": 1,
+              "title": "Kids' Light-Up Sneakers - Blue 6",
+              "url": "https://web-scraping.dev/product/10?variant=blue-6",
+              "score": 8.04,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.2,
+                "last_rating": 4
+              }
+            },
+            {
+              "rank": 2,
+              "title": "Kids' Light-Up Sneakers",
+              "url": "https://web-scraping.dev/product/22",
+              "score": 8.04,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.2,
+                "last_rating": 4
+              }
+            },
+            {
+              "rank": 3,
+              "title": "Kids' Light-Up Sneakers - Blue 6",
+              "url": "https://web-scraping.dev/product/22?variant=blue-6",
+              "score": 8.04,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.2,
+                "last_rating": 4
+              }
+            },
+            {
+              "rank": 4,
+              "title": "Kids' Light-Up Sneakers",
+              "url": "https://web-scraping.dev/product/10",
+              "score": 7.65,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.2,
+                "last_rating": 4
+              }
+            },
+            {
+              "rank": 5,
+              "title": "Kids' Light-Up Sneakers - Blue 5",
+              "url": "https://web-scraping.dev/product/10?variant=blue-5",
+              "score": 7.65,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.2,
+                "last_rating": 4
+              }
+            }
+          ]
+        },
+        {
+          "name": "Strict Filtering (All Tokens)",
+          "settings": {
+            "name": "Strict Filtering (All Tokens)",
+            "filter_mode": "all",
+            "ranking_mode": "linear",
+            "use_synonyms": true,
+            "top_k": 10
+          },
+          "metadata": {
+            "total_documents": 156,
+            "documents_filtered": 0,
+            "documents_returned": 0,
+            "filter_mode": "all",
+            "ranking_mode": "linear",
+            "use_synonyms": true
+          },
+          "top_5_results": []
+        },
+        {
+          "name": "Review-Focused",
+          "settings": {
+            "name": "Review-Focused",
+            "filter_mode": "any",
+            "ranking_mode": "linear",
+            "use_synonyms": true,
+            "top_k": 10,
+            "weights": {
+              "title_tf": 2.0,
+              "description_tf": 1.0,
+              "title_exact_match": 10.0,
+              "description_exact_match": 5.0,
+              "review_score": 5.0,
+              "review_count": 2.0,
+              "early_position": 1.0,
+              "brand_match": 5.0
+            }
+          },
+          "metadata": {
+            "total_documents": 156,
+            "documents_filtered": 20,
+            "documents_returned": 10,
+            "filter_mode": "any",
+            "ranking_mode": "linear",
+            "use_synonyms": true
+          },
+          "top_5_results": [
+            {
+              "rank": 1,
+              "title": "Kids' Light-Up Sneakers - Blue 6",
+              "url": "https://web-scraping.dev/product/10?variant=blue-6",
+              "score": 29.58,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.2,
+                "last_rating": 4
+              }
+            },
+            {
+              "rank": 2,
+              "title": "Kids' Light-Up Sneakers",
+              "url": "https://web-scraping.dev/product/22",
+              "score": 29.58,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.2,
+                "last_rating": 4
+              }
+            },
+            {
+              "rank": 3,
+              "title": "Kids' Light-Up Sneakers - Blue 6",
+              "url": "https://web-scraping.dev/product/22?variant=blue-6",
+              "score": 29.58,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.2,
+                "last_rating": 4
+              }
+            },
+            {
+              "rank": 4,
+              "title": "Running Shoes for Men",
+              "url": "https://web-scraping.dev/product/21",
+              "score": 29.08,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.2,
+                "last_rating": 4
+              }
+            },
+            {
+              "rank": 5,
+              "title": "Running Shoes for Men - 11",
+              "url": "https://web-scraping.dev/product/21?variant=11",
+              "score": 29.08,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.2,
+                "last_rating": 4
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query": "premium quality",
+      "configurations": [
+        {
+          "name": "Linear Scoring (Default)",
+          "settings": {
+            "name": "Linear Scoring (Default)",
+            "filter_mode": "any",
+            "ranking_mode": "linear",
+            "use_synonyms": true,
+            "top_k": 10
+          },
+          "metadata": {
+            "total_documents": 156,
+            "documents_filtered": 17,
+            "documents_returned": 10,
+            "filter_mode": "any",
+            "ranking_mode": "linear",
+            "use_synonyms": true
+          },
+          "top_5_results": [
+            {
+              "rank": 1,
+              "title": "Blue Energy Potion",
+              "url": "https://web-scraping.dev/product/17",
+              "score": 8.8,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.6,
+                "last_rating": 5
+              }
+            },
+            {
+              "rank": 2,
+              "title": "Blue Energy Potion - One",
+              "url": "https://web-scraping.dev/product/17?variant=one",
+              "score": 8.8,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.6,
+                "last_rating": 5
+              }
+            },
+            {
+              "rank": 3,
+              "title": "Blue Energy Potion - Six pack",
+              "url": "https://web-scraping.dev/product/17?variant=six-pack",
+              "score": 8.8,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.6,
+                "last_rating": 5
+              }
+            },
+            {
+              "rank": 4,
+              "title": "Blue Energy Potion",
+              "url": "https://web-scraping.dev/product/5",
+              "score": 8.8,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.6,
+                "last_rating": 5
+              }
+            },
+            {
+              "rank": 5,
+              "title": "Blue Energy Potion - One",
+              "url": "https://web-scraping.dev/product/5?variant=one",
+              "score": 8.8,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.6,
+                "last_rating": 5
+              }
+            }
+          ]
+        },
+        {
+          "name": "BM25 Scoring",
+          "settings": {
+            "name": "BM25 Scoring",
+            "filter_mode": "any",
+            "ranking_mode": "bm25",
+            "use_synonyms": true,
+            "top_k": 10
+          },
+          "metadata": {
+            "total_documents": 156,
+            "documents_filtered": 17,
+            "documents_returned": 10,
+            "filter_mode": "any",
+            "ranking_mode": "bm25",
+            "use_synonyms": true
+          },
+          "top_5_results": [
+            {
+              "rank": 1,
+              "title": "Classic Leather Sneakers",
+              "url": "https://web-scraping.dev/product/11",
+              "score": 3.92,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.4,
+                "last_rating": 5
+              }
+            },
+            {
+              "rank": 2,
+              "title": "Classic Leather Sneakers - Black40",
+              "url": "https://web-scraping.dev/product/11?variant=black40",
+              "score": 3.92,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.4,
+                "last_rating": 5
+              }
+            },
+            {
+              "rank": 3,
+              "title": "Classic Leather Sneakers - Black41",
+              "url": "https://web-scraping.dev/product/11?variant=black41",
+              "score": 3.92,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.4,
+                "last_rating": 5
+              }
+            },
+            {
+              "rank": 4,
+              "title": "Classic Leather Sneakers - Black42",
+              "url": "https://web-scraping.dev/product/11?variant=black42",
+              "score": 3.92,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.4,
+                "last_rating": 5
+              }
+            },
+            {
+              "rank": 5,
+              "title": "Classic Leather Sneakers - White40",
+              "url": "https://web-scraping.dev/product/11?variant=white40",
+              "score": 3.92,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.4,
+                "last_rating": 5
+              }
+            }
+          ]
+        },
+        {
+          "name": "Strict Filtering (All Tokens)",
+          "settings": {
+            "name": "Strict Filtering (All Tokens)",
+            "filter_mode": "all",
+            "ranking_mode": "linear",
+            "use_synonyms": true,
+            "top_k": 10
+          },
+          "metadata": {
+            "total_documents": 156,
+            "documents_filtered": 0,
+            "documents_returned": 0,
+            "filter_mode": "all",
+            "ranking_mode": "linear",
+            "use_synonyms": true
+          },
+          "top_5_results": []
+        },
+        {
+          "name": "Review-Focused",
+          "settings": {
+            "name": "Review-Focused",
+            "filter_mode": "any",
+            "ranking_mode": "linear",
+            "use_synonyms": true,
+            "top_k": 10,
+            "weights": {
+              "title_tf": 2.0,
+              "description_tf": 1.0,
+              "title_exact_match": 10.0,
+              "description_exact_match": 5.0,
+              "review_score": 5.0,
+              "review_count": 2.0,
+              "early_position": 1.0,
+              "brand_match": 5.0
+            }
+          },
+          "metadata": {
+            "total_documents": 156,
+            "documents_filtered": 17,
+            "documents_returned": 10,
+            "filter_mode": "any",
+            "ranking_mode": "linear",
+            "use_synonyms": true
+          },
+          "top_5_results": [
+            {
+              "rank": 1,
+              "title": "Blue Energy Potion",
+              "url": "https://web-scraping.dev/product/17",
+              "score": 27.58,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.6,
+                "last_rating": 5
+              }
+            },
+            {
+              "rank": 2,
+              "title": "Blue Energy Potion - One",
+              "url": "https://web-scraping.dev/product/17?variant=one",
+              "score": 27.58,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.6,
+                "last_rating": 5
+              }
+            },
+            {
+              "rank": 3,
+              "title": "Blue Energy Potion - Six pack",
+              "url": "https://web-scraping.dev/product/17?variant=six-pack",
+              "score": 27.58,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.6,
+                "last_rating": 5
+              }
+            },
+            {
+              "rank": 4,
+              "title": "Blue Energy Potion",
+              "url": "https://web-scraping.dev/product/5",
+              "score": 27.58,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.6,
+                "last_rating": 5
+              }
+            },
+            {
+              "rank": 5,
+              "title": "Blue Energy Potion - One",
+              "url": "https://web-scraping.dev/product/5?variant=one",
+              "score": 27.58,
+              "reviews": {
+                "total_reviews": 5,
+                "mean_mark": 4.6,
+                "last_rating": 5
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query": "gamefuel",
+      "configurations": [
+        {
+          "name": "Linear Scoring (Default)",
+          "settings": {
+            "name": "Linear Scoring (Default)",
+            "filter_mode": "any",
+            "ranking_mode": "linear",
+            "use_synonyms": true,
+            "top_k": 10
+          },
+          "metadata": {
+            "total_documents": 156,
+            "documents_filtered": 0,
+            "documents_returned": 0,
+            "filter_mode": "any",
+            "ranking_mode": "linear",
+            "use_synonyms": true
+          },
+          "top_5_results": []
+        },
+        {
+          "name": "BM25 Scoring",
+          "settings": {
+            "name": "BM25 Scoring",
+            "filter_mode": "any",
+            "ranking_mode": "bm25",
+            "use_synonyms": true,
+            "top_k": 10
+          },
+          "metadata": {
+            "total_documents": 156,
+            "documents_filtered": 0,
+            "documents_returned": 0,
+            "filter_mode": "any",
+            "ranking_mode": "bm25",
+            "use_synonyms": true
+          },
+          "top_5_results": []
+        },
+        {
+          "name": "Strict Filtering (All Tokens)",
+          "settings": {
+            "name": "Strict Filtering (All Tokens)",
+            "filter_mode": "all",
+            "ranking_mode": "linear",
+            "use_synonyms": true,
+            "top_k": 10
+          },
+          "metadata": {
+            "total_documents": 156,
+            "documents_filtered": 0,
+            "documents_returned": 0,
+            "filter_mode": "all",
+            "ranking_mode": "linear",
+            "use_synonyms": true
+          },
+          "top_5_results": []
+        },
+        {
+          "name": "Review-Focused",
+          "settings": {
+            "name": "Review-Focused",
+            "filter_mode": "any",
+            "ranking_mode": "linear",
+            "use_synonyms": true,
+            "top_k": 10,
+            "weights": {
+              "title_tf": 2.0,
+              "description_tf": 1.0,
+              "title_exact_match": 10.0,
+              "description_exact_match": 5.0,
+              "review_score": 5.0,
+              "review_count": 2.0,
+              "early_position": 1.0,
+              "brand_match": 5.0
+            }
+          },
+          "metadata": {
+            "total_documents": 156,
+            "documents_filtered": 0,
+            "documents_returned": 0,
+            "filter_mode": "any",
+            "ranking_mode": "linear",
+            "use_synonyms": true
+          },
+          "top_5_results": []
+        }
+      ]
+    }
+  ]
+}
