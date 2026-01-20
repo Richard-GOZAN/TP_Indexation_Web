@@ -75,14 +75,9 @@ results = engine.search(
 ```
 
 ### Quick Demo
-- install requirements:
+
 ```bash
 cd TP3
-pip install -r requirements.txt
-```
-
-- run:
-```bash
 python demo_search.py    # Run demo
 python test_search.py    # Run full analysis
 ```
