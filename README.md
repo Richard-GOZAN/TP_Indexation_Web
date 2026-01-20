@@ -47,8 +47,9 @@ Complete implementation of a web indexing system: crawling, indexing, and search
     │   ├── reviews_index.json
     │   └── origin_synonyms.json  # Country synonyms
     └── output/
-        └── search_analysis_results.json  # Test results (28 tests)
-        └── example_search_result.json    # Example search result
+    │   └── search_analysis_results.json  # Test results (28 tests)
+    │   └── example_search_result.json    # Example search result
+    └── requirements.txt          # Required python dependencies
 ```
 
 ---
