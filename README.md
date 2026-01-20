@@ -16,8 +16,7 @@ Complete implementation of a web indexing system: crawling, indexing, and search
 │   ├── crawler.py                # Main crawler implementation
 │   ├── README.md                 # TP1 documentation
 │   └── output/
-│   │     └── crawled_pages.jsonl   # Crawler output 
-│   └── requirements.txt          # Required python dependencies
+│        └── crawled_pages.jsonl   # Crawler output 
 │
 ├── TP2/                          # Indexer
 │   ├── indexer.py                # Main indexer implementation
@@ -32,24 +31,28 @@ Complete implementation of a web indexing system: crawling, indexing, and search
 │       └── reviews_index.json    # Reviews index
 │
 └── TP3/                          # Search Engine
-    ├── search_engine.py          # Main search engine
-    ├── test_search.py            # Automated testing
-    ├── demo_search.py            # Usage demonstration
-    ├── README.md                 # TP3 technical documentation
-    ├── analysis/                    # Input data
-    │   ├── ANALYSIS_OBSERVATIONS.md  # Detailed analysis and observations
-    ├── input/                    # Input data
-    │   ├── rearranged_products.jsonl  # Enhanced product data
-    │   ├── title_index.json
-    │   ├── description_index.json
-    │   ├── brand_index.json
-    │   ├── origin_index.json
-    │   ├── reviews_index.json
-    │   └── origin_synonyms.json  # Country synonyms
-    └── output/
-    │   └── search_analysis_results.json  # Test results (28 tests)
-    │   └── example_search_result.json    # Example search result
-    └── requirements.txt          # Required python dependencies
+│   ├── search_engine.py          # Main search engine
+│   ├── test_search.py            # Automated testing
+│   ├── demo_search.py            # Usage demonstration
+│   ├── README.md                 # TP3 technical documentation
+│   ├── analysis/                    # Input data
+│   │   ├── ANALYSIS_OBSERVATIONS.md  # Detailed analysis and observations
+│   ├── input/                    # Input data
+│   │   ├── rearranged_products.jsonl  # Enhanced product data
+│   │   ├── title_index.json
+│   │   ├── description_index.json
+│   │   ├── brand_index.json
+│   │   ├── origin_index.json
+│   │   ├── reviews_index.json
+│   │   └── origin_synonyms.json  # Country synonyms
+│   └── output/
+│       └── search_analysis_results.json  # Test results (28 tests)
+│       └── example_search_result.json    # Example search result
+│
+└── .gitignore                # Git ignore rules
+└── README.md                 # Global README
+└── requirements.txt          # Required python dependencies
+
 ```
 
 ---
@@ -98,12 +101,15 @@ TP3: Indexes + Synonyms → Search Engine → Ranked Results
 
 
 
-### Quick Start
+### Install and Quick Start
 
 ```bash
 # Clone repository
 git clone https://github.com/Richard-GOZAN/TP_Indexation_Web.git
 cd TP_Indexation_Web
+
+# Install dependencies
+pip install -r requirements.txt
 
 # Run TP1 - Crawler
 cd TP1
