@@ -1,6 +1,6 @@
 """
-Web Crawler pour le TP1
-Ce crawler explore un site web en priorisant les pages produits.
+Web Crawler for TP1
+This crawler explores a website by prioritizing product pages.
 """
 
 import json
@@ -16,27 +16,27 @@ from bs4 import BeautifulSoup
 
 
 class RobotsChecker:
-    """Classe pour vérifier et respecter les règles du robots.txt"""
+    """Class to verify and respect robots.txt rules"""
     
     def __init__(self):
         self._parsers = {}  
     
     def can_fetch(self, url: str, user_agent: str = "*") -> bool:
         """
-        Vérifie si l'URL peut être crawlée selon robots.txt
+        Check if URL can be crawled according to robots.txt
         
         Args:
-            url: L'URL à vérifier
-            user_agent: Le user agent du crawler
+            url: URL to verify
+            user_agent: Crawler's user agent
             
         Returns:
-            True si le crawl est autorisé, False sinon
+            True if crawling is allowed, False otherwise
         """
         parsed_url = urllib.parse.urlparse(url)
         base_url = f"{parsed_url.scheme}://{parsed_url.netloc}"
         robots_url = f"{base_url}/robots.txt"
         
-        # Vérification du cache
+        # Check cache
         if base_url not in self._parsers:
             parser = urllib.robotparser.RobotFileParser()
             parser.set_url(robots_url)
@@ -44,8 +44,8 @@ class RobotsChecker:
                 parser.read()
                 self._parsers[base_url] = parser
             except Exception as e:
-                print(f"Impossible de lire robots.txt pour {base_url}: {e}")
-                # Autorisation par défaut en cas d'erreur
+                print(f"Unable to read robots.txt for {base_url}: {e}")
+                # Allow by default if error
                 return True
         
         return self._parsers[base_url].can_fetch(user_agent, url)
@@ -53,14 +53,14 @@ class RobotsChecker:
 
 def fetch_page(url: str, timeout: int = 10) -> Optional[str]:
     """
-    Récupère le contenu HTML d'une page web
+    Fetch HTML content of a web page
     
     Args:
-        url: L'URL de la page à récupérer
-        timeout: Temps maximum d'attente en secondes
+        url: URL of the page to fetch
+        timeout: Maximum wait time in seconds
         
     Returns:
-        Le contenu HTML de la page ou None en cas d'erreur
+        HTML content of the page or None on error
     """
     try:
         headers = {
@@ -69,46 +69,46 @@ def fetch_page(url: str, timeout: int = 10) -> Optional[str]:
         req = Request(url, headers=headers)
         
         with urlopen(req, timeout=timeout) as response:
-            # Vérification du type de contenu
+            # Check content type
             content_type = response.headers.get('Content-Type', '')
             if 'text/html' not in content_type:
-                print(f"Contenu non-HTML ignore: {url} ({content_type})")
+                print(f"Non-HTML content ignored: {url} ({content_type})")
                 return None
             
             return response.read().decode('utf-8', errors='ignore')
     
     except HTTPError as e:
-        print(f"Erreur HTTP {e.code} pour {url}")
+        print(f"HTTP Error {e.code} for {url}")
         return None
     except URLError as e:
-        print(f"Erreur URL pour {url}: {e.reason}")
+        print(f"URL Error for {url}: {e.reason}")
         return None
     except Exception as e:
-        print(f"Erreur inattendue pour {url}: {e}")
+        print(f"Unexpected error for {url}: {e}")
         return None
 
 
 def extract_title(soup: BeautifulSoup) -> str:
     """
-    Extrait le titre de la page
+    Extract page title
     
     Args:
-        soup: Objet BeautifulSoup de la page
+        soup: BeautifulSoup object of the page
         
     Returns:
-        Le titre de la page ou chaîne vide
+        Page title or empty string
     """
-    # Recherche dans <h3 class="product-title">
+    # Search in <h3 class="product-title">
     product_title = soup.find('h3', class_='product-title')
     if product_title:
         return product_title.get_text(strip=True)
     
-    # Recherche dans <title> avec nettoyage sélectif du préfixe
+    # Search in <title> with selective prefix cleaning
     title_tag = soup.find('title')
     if title_tag:
         title = title_tag.get_text(strip=True)
         
-        # Nettoyage uniquement si ce n'est PAS "page X"
+        # Clean only if it's NOT "page X"
         if 'page' not in title.lower():
             if title.startswith('web-scraping.dev product '):
                 title = title.replace('web-scraping.dev product ', '', 1)
@@ -117,7 +117,7 @@ def extract_title(soup: BeautifulSoup) -> str:
         
         return title
     
-    # Recherche dans <h1> comme fallback
+    # Search in <h1> as fallback
     h1_tag = soup.find('h1')
     if h1_tag:
         return h1_tag.get_text(strip=True)
@@ -127,31 +127,31 @@ def extract_title(soup: BeautifulSoup) -> str:
 
 def extract_description(soup: BeautifulSoup) -> str:
     """
-    Extrait la description (premier paragraphe significatif)
+    Extract description (first significant paragraph)
     
     Args:
-        soup: Objet BeautifulSoup de la page
+        soup: BeautifulSoup object of the page
         
     Returns:
-        La description ou chaîne vide
+        Description or empty string
     """
-    # Recherche dans la zone de contenu produit
+    # Search in product content area
     product_desc = soup.find('p', class_='card-description')
     if product_desc:
         return product_desc.get_text(strip=True)
     
-    # Recherche dans les zones de contenu principal
+    # Search in main content areas
     content_areas = soup.find_all(['div'], class_=lambda x: x and ('content' in x.lower() or 'description' in x.lower()))
     
     for area in content_areas:
         paragraphs = area.find_all('p')
         for p in paragraphs:
             text = p.get_text(strip=True)
-            # Sélection du premier paragraphe significatif
+            # Select first significant paragraph
             if len(text) > 20:
                 return text
     
-    # Fallback: recherche dans tous les paragraphes
+    # Fallback: search in all paragraphs
     paragraphs = soup.find_all('p')
     for p in paragraphs:
         text = p.get_text(strip=True)
@@ -163,25 +163,17 @@ def extract_description(soup: BeautifulSoup) -> str:
 
 def extract_product_features(soup: BeautifulSoup) -> Dict[str, str]:
     """
-    Extrait les caractéristiques produit depuis le tableau HTML
-    
-    Structure HTML du site :
-    <table class="table-product">
-      <tr class="feature">
-        <td class="feature-label">material</td>
-        <td class="feature-value">Premium quality chocolate</td>
-      </tr>
-    </table>
+    Extract product features from HTML table
     
     Args:
-        soup: Objet BeautifulSoup de la page
+        soup: BeautifulSoup object of the page
         
     Returns:
-        Dictionnaire des caractéristiques produit
+        Dictionary of product features
     """
     features = {}
     
-    # Recherche des lignes de features dans le tableau
+    # Search for feature rows in table
     feature_rows = soup.find_all('tr', class_='feature')
     
     for row in feature_rows:
@@ -199,25 +191,17 @@ def extract_product_features(soup: BeautifulSoup) -> Dict[str, str]:
 
 def extract_product_reviews(soup: BeautifulSoup) -> List[Dict]:
     """
-    Extrait les avis produits
-    
-    Le site charge les reviews dynamiquement via JavaScript depuis un script JSON.
-    On extrait donc directement depuis le script <script id="reviews-data">.
-    
-    Structure:
-    <script type="application/json" id="reviews-data">
-    [{"date": "2022-07-22", "id": "chocolate-candy-box-1", "rating": 5, "text": "..."}]
-    </script>
+    Extract product reviews
     
     Args:
-        soup: Objet BeautifulSoup de la page
+        soup: BeautifulSoup object of the page
         
     Returns:
-        Liste des avis produits
+        List of product reviews
     """
     reviews = []
     
-    # Methode 1: Extraction depuis le script JSON (pour contenu dynamique)
+    # Method 1: Extract from JSON script (for dynamic content)
     reviews_script = soup.find('script', id='reviews-data')
     if reviews_script and reviews_script.string:
         try:
@@ -226,36 +210,36 @@ def extract_product_reviews(soup: BeautifulSoup) -> List[Dict]:
         except json.JSONDecodeError:
             pass
     
-    # Methode 2: Fallback - extraction depuis le HTML rendu (si JavaScript executé)
+    # Method 2: Fallback - extract from rendered HTML (if JavaScript executed)
     review_containers = soup.find_all('div', class_='review')
     
     for container in review_containers:
         review = {}
         
-        # Extraction de la date
+        # Extract date
         date_span = container.find('span')
         if date_span:
             review['date'] = date_span.get_text(strip=True)
         
-        # Extraction de l'ID depuis les classes CSS
+        # Extract ID from CSS classes
         classes = container.get('class', [])
         for cls in classes:
             if cls.startswith('review-') and cls != 'review':
-                # Nettoyage du préfixe "review-"
+                # Clean "review-" prefix
                 review['id'] = cls.replace('review-', '', 1)
                 break
         
-        # Extraction du rating (nombre d'étoiles SVG)
+        # Extract rating (number of star SVGs)
         stars = container.find_all('svg')
         if stars:
             review['rating'] = len(stars)
         
-        # Extraction du texte
+        # Extract text
         text_p = container.find('p')
         if text_p:
             review['text'] = text_p.get_text(strip=True)
         
-        # Ajout seulement si des données ont été trouvées
+        # Add only if data was found
         if review:
             reviews.append(review)
     
@@ -264,15 +248,15 @@ def extract_product_reviews(soup: BeautifulSoup) -> List[Dict]:
 
 def extract_links(soup: BeautifulSoup, base_url: str, current_url: str) -> List[str]:
     """
-    Extrait tous les liens de la page et les normalise
+    Extract all links from page and normalize them
     
     Args:
-        soup: Objet BeautifulSoup de la page
-        base_url: URL de base du site
-        current_url: URL de la page actuelle
+        soup: BeautifulSoup object of the page
+        base_url: Base URL of the site
+        current_url: URL of current page
         
     Returns:
-        Liste des URLs absolues uniques
+        List of unique absolute URLs
     """
     links = []
     seen = set()
@@ -280,10 +264,10 @@ def extract_links(soup: BeautifulSoup, base_url: str, current_url: str) -> List[
     for a_tag in soup.find_all('a', href=True):
         href = a_tag['href']
         
-        # Résolution des URLs relatives
+        # Resolve relative URLs
         absolute_url = urllib.parse.urljoin(current_url, href)
         
-        # Nettoyage de l'URL (suppression des fragments)
+        # Clean URL (remove fragments)
         parsed = urllib.parse.urlparse(absolute_url)
         clean_url = urllib.parse.urlunparse((
             parsed.scheme,
@@ -294,7 +278,7 @@ def extract_links(soup: BeautifulSoup, base_url: str, current_url: str) -> List[
             ''
         ))
         
-        # Vérification du domaine
+        # Check domain
         if clean_url.startswith(base_url) and clean_url not in seen:
             links.append(clean_url)
             seen.add(clean_url)
@@ -303,58 +287,58 @@ def extract_links(soup: BeautifulSoup, base_url: str, current_url: str) -> List[
 
 
 class WebCrawler:
-    """Crawler web avec priorité pour les pages produits"""
+    """Web crawler with priority for product pages"""
     
     def __init__(self, start_url: str, max_pages: int = 50, delay: float = 1.0):
         """
-        Initialise le crawler
+        Initialize crawler
         
         Args:
-            start_url: URL de départ
-            max_pages: Nombre maximum de pages à crawler
-            delay: Délai entre deux requêtes (politesse)
+            start_url: Starting URL
+            max_pages: Maximum number of pages to crawl
+            delay: Delay between requests (politeness)
         """
         self.start_url = start_url
         self.max_pages = max_pages
         self.delay = delay
         
-        # Extraction de l'URL de base
+        # Extract base URL
         parsed = urllib.parse.urlparse(start_url)
         self.base_url = f"{parsed.scheme}://{parsed.netloc}"
         
-        # File d'attente avec priorité
-        # Priorité 0 = pages produit (crawl en premier)
-        # Priorité 1 = autres pages
+        # Priority queue
+        # Priority 0 = product pages (crawl first)
+        # Priority 1 = other pages
         self.to_visit = deque()
         self.to_visit.append((1, start_url))
         
-        # Ensemble des URLs déjà visitées
+        # Set of already visited URLs
         self.visited: Set[str] = set()
         
-        # Liste des résultats
+        # List of results
         self.results: List[Dict] = []
         
-        # Instance du vérificateur robots.txt
+        # Robots.txt checker instance
         self.robots_checker = RobotsChecker()
     
     def is_product_url(self, url: str) -> bool:
         """
-        Détermine si une URL est une page produit
+        Determine if URL is a product page
         
         Args:
-            url: L'URL à vérifier
+            url: URL to check
             
         Returns:
-            True si c'est une page produit
+            True if it's a product page
         """
         return 'product' in url.lower()
     
     def add_urls_to_queue(self, urls: List[str]):
         """
-        Ajoute des URLs à la file d'attente avec priorité
+        Add URLs to queue with priority
         
         Args:
-            urls: Liste des URLs à ajouter
+            urls: List of URLs to add
         """
         for url in urls:
             if url not in self.visited and url not in [u for _, u in self.to_visit]:
@@ -362,13 +346,13 @@ class WebCrawler:
                 self.to_visit.append((priority, url))
     
     def crawl(self):
-        """Lance le crawling"""
-        print(f"Demarrage du crawler depuis {self.start_url}")
-        print(f"Objectif: {self.max_pages} pages maximum")
-        print(f"Delai entre requetes: {self.delay}s\n")
+        """Start crawling"""
+        print(f"Starting crawler from {self.start_url}")
+        print(f"Target: {self.max_pages} pages maximum")
+        print(f"Delay between requests: {self.delay}s\n")
         
         while self.to_visit and len(self.visited) < self.max_pages:
-            # Tri par priorité avant de dépiler
+            # Sort by priority before popping
             self.to_visit = deque(sorted(self.to_visit, key=lambda x: x[0]))
             
             priority, url = self.to_visit.popleft()
@@ -376,27 +360,27 @@ class WebCrawler:
             if url in self.visited:
                 continue
             
-            # Vérification robots.txt
+            # Check robots.txt
             if not self.robots_checker.can_fetch(url):
-                print(f"Bloque par robots.txt: {url}")
+                print(f"Blocked by robots.txt: {url}")
                 continue
             
-            # Marquage comme visité
+            # Mark as visited
             self.visited.add(url)
             
-            # Indicateur de priorité
+            # Priority indicator
             priority_icon = "[PROD]" if priority == 0 else "[PAGE]"
             print(f"{priority_icon} [{len(self.visited)}/{self.max_pages}] Crawling: {url}")
             
-            # Récupération de la page
+            # Fetch page
             html = fetch_page(url)
             if not html:
                 continue
             
-            # Parsing du HTML
+            # Parse HTML
             soup = BeautifulSoup(html, 'html.parser')
             
-            # Extraction des données
+            # Extract data
             page_data = {
                 'url': url,
                 'title': extract_title(soup),
@@ -408,75 +392,75 @@ class WebCrawler:
             
             self.results.append(page_data)
             
-            # Ajout des nouveaux liens à la file
+            # Add new links to queue
             self.add_urls_to_queue(page_data['links'])
             
-            # Respect du délai de politesse
+            # Respect politeness delay
             if len(self.visited) < self.max_pages:
                 time.sleep(self.delay)
         
-        print(f"\nCrawling termine!")
-        print(f"{len(self.results)} pages crawlees")
+        print(f"\nCrawling complete!")
+        print(f"{len(self.results)} pages crawled")
     
     def save_results(self, output_file: str):
         """
-        Sauvegarde les résultats en JSONL
+        Save results in JSONL format
         
         Args:
-            output_file: Chemin du fichier de sortie
+            output_file: Output file path
         """
         with open(output_file, 'w', encoding='utf-8') as f:
             for result in self.results:
                 f.write(json.dumps(result, ensure_ascii=False) + '\n')
         
-        print(f"Resultats sauvegardes dans: {output_file}")
+        print(f"Results saved to: {output_file}")
 
 
 def main():
-    """Fonction principale"""
+    """Main function"""
     import argparse
     
     parser = argparse.ArgumentParser(
-        description='Web Crawler pour le TP1 - Indexation Web ENSAI 2026'
+        description='Web Crawler for TP1 - Web Indexing ENSAI 2026'
     )
     parser.add_argument(
         '--url',
         type=str,
         default='https://web-scraping.dev/products',
-        help='URL de depart (defaut: https://web-scraping.dev/products)'
+        help='Starting URL (default: https://web-scraping.dev/products)'
     )
     parser.add_argument(
         '--max-pages',
         type=int,
         default=50,
-        help='Nombre maximum de pages a crawler (defaut: 50)'
+        help='Maximum number of pages to crawl (default: 50)'
     )
     parser.add_argument(
         '--delay',
         type=float,
         default=1.0,
-        help='Delai en secondes entre deux requetes (defaut: 1.0)'
+        help='Delay in seconds between requests (default: 1.0)'
     )
     parser.add_argument(
         '--output',
         type=str,
         default='output/crawled_pages.jsonl',
-        help='Fichier de sortie (defaut: output/crawled_pages.jsonl)'
+        help='Output file (default: output/crawled_pages.jsonl)'
     )
     
     args = parser.parse_args()
     
-    # Creation du crawler
+    # Create crawler
     crawler = WebCrawler(
         start_url=args.url,
         max_pages=args.max_pages,
         delay=args.delay
     )
     
-    # Lancement du crawling
+    # Start crawling
     crawler.crawl()
     
-    # Sauvegarde des résultats
+    # Save results
     crawler.save_results(args.output)
 
 
