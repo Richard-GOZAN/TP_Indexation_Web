@@ -1,5 +1,5 @@
 """
-Simple Usage Example - TP3 Search Engine
+Simple Usage for Search Engine
 Shows basic usage with formatted output
 """
 
@@ -15,24 +15,24 @@ def print_results(results: dict):
         results: Search results dictionary
     """
     print(f"\n{'='*70}")
-    print(f"RECHERCHE: '{results['query']}'")
+    print(f"SEARCH QUERY: '{results['query']}'")
     print("="*70)
     
     # Metadata
     meta = results['metadata']
-    print(f"\nMétadonnées:")
-    print(f"  Total documents corpus: {meta['total_documents']}")
-    print(f"  Documents filtrés: {meta['documents_filtered']}")
-    print(f"  Résultats retournés: {meta['documents_returned']}")
-    print(f"  Mode filtrage: {meta['filter_mode']}")
-    print(f"  Mode ranking: {meta['ranking_mode']}")
-    
+    print(f"\nMetadata:")
+    print(f"  Total documents in corpus: {meta['total_documents']}")
+    print(f"  Filtered documents: {meta['documents_filtered']}")
+    print(f"  Results returned: {meta['documents_returned']}")
+    print(f"  Filter mode: {meta['filter_mode']}")
+    print(f"  Ranking mode: {meta['ranking_mode']}")
+
     # Results
-    print(f"\nRésultats:")
+    print(f"\nResults:")
     print("-"*70)
     
     if not results['results']:
-        print("  Aucun résultat trouvé.")
+        print("  No results found.")
     else:
         for i, result in enumerate(results['results'], 1):
             print(f"\n{i}. {result['title']}")
@@ -41,7 +41,7 @@ def print_results(results: dict):
             # Reviews
             if result['review_stats'].get('total_reviews', 0) > 0:
                 reviews = result['review_stats']
-                print(f"   Avis: ⭐ {reviews['mean_mark']:.1f}/5 ({reviews['total_reviews']} avis)")
+                print(f"   Reviews: ⭐ {reviews['mean_mark']:.1f}/5 ({reviews['total_reviews']} reviews)")
             
             # Description
             desc = result['description']
@@ -56,9 +56,9 @@ def main():
     """Main demo function"""
     
     print("="*70)
-    print("TP3 - MOTEUR DE RECHERCHE E-COMMERCE")
+    print("E-COMMERCE SEARCH ENGINE")
     print("="*70)
-    print("\nInitialisation du moteur...")
+    print("\nInitializing search engine...")
     
     # Initialize engine
     engine = SearchEngine(
@@ -67,31 +67,31 @@ def main():
         reviews_index_path='input/reviews_index.json',
         brand_index_path='input/brand_index.json',
         origin_index_path='input/origin_index.json',
-        documents_path='rearranged_products.jsonl',
+        documents_path='input/rearranged_products.jsonl',
         synonyms_path='input/origin_synonyms.json'
     )
     
-    print("✓ Moteur initialisé avec succès!")
+    print("Search engine initialized successfully!")
     
     # Example searches
     examples = [
         {
             'query': 'chocolate candy',
-            'description': 'Recherche simple de produit'
+            'description': 'Simple product search'
         },
         {
             'query': 'leather sneakers',
-            'description': 'Recherche par matériau et type'
+            'description': 'Search by material and product type'
         },
         {
             'query': 'made in italy',
-            'description': 'Recherche par origine (avec synonymes)'
+            'description': 'Search by origin (with synonyms)'
         }
     ]
     
     for example in examples:
         print(f"\n\n{'='*70}")
-        print(f"EXEMPLE: {example['description']}")
+        print(f"EXAMPLE: {example['description']}")
         
         # Perform search
         results = engine.search(
@@ -107,7 +107,7 @@ def main():
     
     # Save one result as example
     print(f"\n\n{'='*70}")
-    print("SAUVEGARDE D'UN EXEMPLE")
+    print("SAVING AN EXAMPLE RESULT")
     print("="*70)
     
     example_results = engine.search("chocolate candy", top_k=3)
@@ -115,17 +115,7 @@ def main():
     with open('output/example_search_result.json', 'w', encoding='utf-8') as f:
         json.dump(example_results, f, indent=2, ensure_ascii=False)
     
-    print("✓ Exemple sauvegardé dans: output/example_search_result.json")
-    
-    print(f"\n\n{'='*70}")
-    print("DÉMO TERMINÉE")
-    print("="*70)
-    print("\nPour utiliser le moteur dans notre code:")
-    print("  1. Importer: from search_engine import SearchEngine")
-    print("  2. Initialiser: engine = SearchEngine(...)")
-    print("  3. Rechercher: results = engine.search('votre requête')")
-    print("\nVoir README.md du TP3 pour documentation complète.")
-
+    print("Example saved to: output/example_search_result.json")
 
 if __name__ == '__main__':
     main()

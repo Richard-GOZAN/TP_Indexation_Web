@@ -103,7 +103,7 @@
               "rank": 1,
               "title": "Box of Chocolate Candy",
               "url": "https://web-scraping.dev/product/1",
-              "score": 5.58,
+              "score": 5.06,
               "reviews": {
                 "total_reviews": 5,
                 "mean_mark": 4.6,
@@ -114,7 +114,7 @@
               "rank": 2,
               "title": "Box of Chocolate Candy - Cherry small",
               "url": "https://web-scraping.dev/product/13?variant=cherry-small",
-              "score": 5.58,
+              "score": 5.06,
               "reviews": {
                 "total_reviews": 5,
                 "mean_mark": 4.6,
@@ -125,7 +125,7 @@
               "rank": 3,
               "title": "Box of Chocolate Candy - Orange large",
               "url": "https://web-scraping.dev/product/13?variant=orange-large",
-              "score": 5.58,
+              "score": 5.06,
               "reviews": {
                 "total_reviews": 5,
                 "mean_mark": 4.6,
@@ -136,7 +136,7 @@
               "rank": 4,
               "title": "Box of Chocolate Candy - Orange small",
               "url": "https://web-scraping.dev/product/13?variant=orange-small",
-              "score": 5.58,
+              "score": 5.06,
               "reviews": {
                 "total_reviews": 5,
                 "mean_mark": 4.6,
@@ -147,7 +147,7 @@
               "rank": 5,
               "title": "Box of Chocolate Candy - Cherry large",
               "url": "https://web-scraping.dev/product/1?variant=cherry-large",
-              "score": 5.58,
+              "score": 5.06,
               "reviews": {
                 "total_reviews": 5,
                 "mean_mark": 4.6,
@@ -418,7 +418,7 @@
               "rank": 1,
               "title": "Classic Leather Sneakers",
               "url": "https://web-scraping.dev/product/11",
-              "score": 6.21,
+              "score": 5.62,
               "reviews": {
                 "total_reviews": 5,
                 "mean_mark": 4.4,
@@ -429,7 +429,7 @@
               "rank": 2,
               "title": "Classic Leather Sneakers",
               "url": "https://web-scraping.dev/product/23",
-              "score": 6.21,
+              "score": 5.62,
               "reviews": {
                 "total_reviews": 5,
                 "mean_mark": 4.4,
@@ -440,7 +440,7 @@
               "rank": 3,
               "title": "Classic Leather Sneakers - Black40",
               "url": "https://web-scraping.dev/product/23?variant=black40",
-              "score": 6.21,
+              "score": 5.62,
               "reviews": {
                 "total_reviews": 5,
                 "mean_mark": 4.4,
@@ -451,7 +451,7 @@
               "rank": 4,
               "title": "Classic Leather Sneakers - White40",
               "url": "https://web-scraping.dev/product/11?variant=white40",
-              "score": 6.16,
+              "score": 5.58,
               "reviews": {
                 "total_reviews": 5,
                 "mean_mark": 4.4,
@@ -462,7 +462,7 @@
               "rank": 5,
               "title": "Classic Leather Sneakers - White42",
               "url": "https://web-scraping.dev/product/11?variant=white42",
-              "score": 6.16,
+              "score": 5.58,
               "reviews": {
                 "total_reviews": 5,
                 "mean_mark": 4.4,
@@ -733,7 +733,7 @@
               "rank": 1,
               "title": "Blue Energy Potion - One",
               "url": "https://web-scraping.dev/product/5?variant=one",
-              "score": 4.94,
+              "score": 4.47,
               "reviews": {
                 "total_reviews": 5,
                 "mean_mark": 4.6,
@@ -744,7 +744,7 @@
               "rank": 2,
               "title": "Blue Energy Potion",
               "url": "https://web-scraping.dev/product/17",
-              "score": 4.93,
+              "score": 4.46,
               "reviews": {
                 "total_reviews": 5,
                 "mean_mark": 4.6,
@@ -755,7 +755,7 @@
               "rank": 3,
               "title": "Blue Energy Potion - One",
               "url": "https://web-scraping.dev/product/17?variant=one",
-              "score": 4.93,
+              "score": 4.46,
               "reviews": {
                 "total_reviews": 5,
                 "mean_mark": 4.6,
@@ -766,7 +766,7 @@
               "rank": 4,
               "title": "Blue Energy Potion - Six pack",
               "url": "https://web-scraping.dev/product/17?variant=six-pack",
-              "score": 4.93,
+              "score": 4.46,
               "reviews": {
                 "total_reviews": 5,
                 "mean_mark": 4.6,
@@ -777,7 +777,7 @@
               "rank": 5,
               "title": "Blue Energy Potion",
               "url": "https://web-scraping.dev/product/5",
-              "score": 4.93,
+              "score": 4.46,
               "reviews": {
                 "total_reviews": 5,
                 "mean_mark": 4.6,
@@ -1048,7 +1048,7 @@
               "rank": 1,
               "title": "Kids' Light-Up Sneakers",
               "url": "https://web-scraping.dev/product/10",
-              "score": 3.64,
+              "score": 3.4,
               "reviews": {
                 "total_reviews": 5,
                 "mean_mark": 4.2,
@@ -1059,7 +1059,7 @@
               "rank": 2,
               "title": "Kids' Light-Up Sneakers - Blue 5",
               "url": "https://web-scraping.dev/product/10?variant=blue-5",
-              "score": 3.64,
+              "score": 3.4,
               "reviews": {
                 "total_reviews": 5,
                 "mean_mark": 4.2,
@@ -1070,7 +1070,7 @@
               "rank": 3,
               "title": "Kids' Light-Up Sneakers - Blue 6",
               "url": "https://web-scraping.dev/product/10?variant=blue-6",
-              "score": 3.64,
+              "score": 3.4,
               "reviews": {
                 "total_reviews": 5,
                 "mean_mark": 4.2,
@@ -1081,7 +1081,7 @@
               "rank": 4,
               "title": "Kids' Light-Up Sneakers - Red 5",
               "url": "https://web-scraping.dev/product/10?variant=red-5",
-              "score": 3.64,
+              "score": 3.4,
               "reviews": {
                 "total_reviews": 5,
                 "mean_mark": 4.2,
@@ -1092,7 +1092,7 @@
               "rank": 5,
               "title": "Kids' Light-Up Sneakers - Red 6",
               "url": "https://web-scraping.dev/product/10?variant=red-6",
-              "score": 3.64,
+              "score": 3.4,
               "reviews": {
                 "total_reviews": 5,
                 "mean_mark": 4.2,
@@ -1307,7 +1307,7 @@
               "rank": 1,
               "title": "Kids' Light-Up Sneakers - Blue 6",
               "url": "https://web-scraping.dev/product/10?variant=blue-6",
-              "score": 8.04,
+              "score": 7.46,
               "reviews": {
                 "total_reviews": 5,
                 "mean_mark": 4.2,
@@ -1318,7 +1318,7 @@
               "rank": 2,
               "title": "Kids' Light-Up Sneakers",
               "url": "https://web-scraping.dev/product/22",
-              "score": 8.04,
+              "score": 7.46,
               "reviews": {
                 "total_reviews": 5,
                 "mean_mark": 4.2,
@@ -1329,7 +1329,7 @@
               "rank": 3,
               "title": "Kids' Light-Up Sneakers - Blue 6",
               "url": "https://web-scraping.dev/product/22?variant=blue-6",
-              "score": 8.04,
+              "score": 7.46,
               "reviews": {
                 "total_reviews": 5,
                 "mean_mark": 4.2,
@@ -1340,7 +1340,7 @@
               "rank": 4,
               "title": "Kids' Light-Up Sneakers",
               "url": "https://web-scraping.dev/product/10",
-              "score": 7.65,
+              "score": 7.15,
               "reviews": {
                 "total_reviews": 5,
                 "mean_mark": 4.2,
@@ -1351,7 +1351,7 @@
               "rank": 5,
               "title": "Kids' Light-Up Sneakers - Blue 5",
               "url": "https://web-scraping.dev/product/10?variant=blue-5",
-              "score": 7.65,
+              "score": 7.15,
               "reviews": {
                 "total_reviews": 5,
                 "mean_mark": 4.2,
@@ -1566,7 +1566,7 @@
               "rank": 1,
               "title": "Classic Leather Sneakers",
               "url": "https://web-scraping.dev/product/11",
-              "score": 3.92,
+              "score": 3.66,
               "reviews": {
                 "total_reviews": 5,
                 "mean_mark": 4.4,
@@ -1577,7 +1577,7 @@
               "rank": 2,
               "title": "Classic Leather Sneakers - Black40",
               "url": "https://web-scraping.dev/product/11?variant=black40",
-              "score": 3.92,
+              "score": 3.66,
               "reviews": {
                 "total_reviews": 5,
                 "mean_mark": 4.4,
@@ -1588,7 +1588,7 @@
               "rank": 3,
               "title": "Classic Leather Sneakers - Black41",
               "url": "https://web-scraping.dev/product/11?variant=black41",
-              "score": 3.92,
+              "score": 3.66,
               "reviews": {
                 "total_reviews": 5,
                 "mean_mark": 4.4,
@@ -1599,7 +1599,7 @@
               "rank": 4,
               "title": "Classic Leather Sneakers - Black42",
               "url": "https://web-scraping.dev/product/11?variant=black42",
-              "score": 3.92,
+              "score": 3.66,
               "reviews": {
                 "total_reviews": 5,
                 "mean_mark": 4.4,
@@ -1610,7 +1610,7 @@
               "rank": 5,
               "title": "Classic Leather Sneakers - White40",
               "url": "https://web-scraping.dev/product/11?variant=white40",
-              "score": 3.92,
+              "score": 3.66,
               "reviews": {
                 "total_reviews": 5,
                 "mean_mark": 4.4,

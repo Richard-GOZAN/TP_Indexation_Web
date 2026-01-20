@@ -1,5 +1,5 @@
 """
-Search Engine
+Search Engine for TP3 - Web Indexing
 Implements filtering, ranking, and search capabilities using pre-built indexes
 """
 
@@ -8,14 +8,40 @@ import math
 import string
 from collections import defaultdict
 from typing import Dict, List, Tuple, Set, Any
-import nltk
-from nltk.corpus import stopwords
-
 
 
 # NLTK English Stopwords 
-nltk.download("stopwords")
-STOPWORDS = set(stopwords.words("english"))
+# Generated using:
+#   import nltk
+#   from nltk.corpus import stopwords
+#   nltk.download("stopwords")
+#   STOPWORDS = set(stopwords.words("english"))
+STOPWORDS = {
+    'a', 'about', 'above', 'after', 'again', 'against', 'ain', 'all', 'am', 'an', 
+    'and', 'any', 'are', 'aren', "aren't", 'as', 'at', 'be', 'because', 'been', 
+    'before', 'being', 'below', 'between', 'both', 'but', 'by', 'can', 'couldn', 
+    "couldn't", 'd', 'did', 'didn', "didn't", 'do', 'does', 'doesn', "doesn't", 
+    'doing', 'don', "don't", 'down', 'during', 'each', 'few', 'for', 'from', 
+    'further', 'had', 'hadn', "hadn't", 'has', 'hasn', "hasn't", 'have', 'haven', 
+    "haven't", 'having', 'he', "he'd", "he'll", 'her', 'here', 'hers', 'herself', 
+    "he's", 'him', 'himself', 'his', 'how', 'i', "i'd", 'if', "i'll", "i'm", 'in', 
+    'into', 'is', 'isn', "isn't", 'it', "it'd", "it'll", "it's", 'its', 'itself', 
+    "i've", 'just', 'll', 'm', 'ma', 'me', 'mightn', "mightn't", 'more', 'most', 
+    'mustn', "mustn't", 'my', 'myself', 'needn', "needn't", 'no', 'nor', 'not', 
+    'now', 'o', 'of', 'off', 'on', 'once', 'only', 'or', 'other', 'our', 'ours', 
+    'ourselves', 'out', 'over', 'own', 're', 's', 'same', 'shan', "shan't", 'she', 
+    "she'd", "she'll", "she's", 'should', 'shouldn', "shouldn't", "should've", 'so', 
+    'some', 'such', 't', 'than', 'that', "that'll", 'the', 'their', 'theirs', 
+    'them', 'themselves', 'then', 'there', 'these', 'they', "they'd", "they'll", 
+    "they're", "they've", 'this', 'those', 'through', 'to', 'too', 'under', 'until', 
+    'up', 've', 'very', 'was', 'wasn', "wasn't", 'we', "we'd", "we'll", "we're", 
+    'were', 'weren', "weren't", "we've", 'what', 'when', 'where', 'which', 'while', 
+    'who', 'whom', 'why', 'will', 'with', 'won', "won't", 'wouldn', "wouldn't", 
+    'y', 'you', "you'd", "you'll", 'your', "you're", 'yours', 'yourself', 
+    'yourselves', "you've"
+}
+
+# Total: 198 NLTK English stopwords 
 
 
 def load_json(filepath: str) -> Dict:
@@ -214,7 +240,7 @@ def calculate_bm25_score(query_tokens: List[str],
                          title_index: Dict, 
                          description_index: Dict,
                          total_docs: int,
-                         k1: float = 1.5,
+                         k1: float = 1.2, 
                          b: float = 0.75) -> float:
     """
     Calculate BM25 score for a document
@@ -225,8 +251,8 @@ def calculate_bm25_score(query_tokens: List[str],
         title_index: Title inverted index
         description_index: Description inverted index
         total_docs: Total number of documents
-        k1: BM25 parameter (term frequency saturation)
-        b: BM25 parameter (length normalization)
+        k1: Term frequency saturation (default: 1.2)
+        b: Length normalization (default: 0.75)
         
     Returns:
         BM25 score
@@ -234,7 +260,7 @@ def calculate_bm25_score(query_tokens: List[str],
     score = 0.0
     
     # Average document length (approximation)
-    avg_doc_length = 50  # Approximate average
+    avg_doc_length = 50  
     
     # Calculate document length
     doc_length = 0
@@ -541,13 +567,12 @@ class SearchEngine:
                 'review_stats': self.reviews_index.get(url, {})
             })
         
-
-        # Sort by score descending, then by URL for stability
+        # Sort by score descending, then by URL for deterministic ordering
+        # This ensures consistent results when multiple documents have the same score
         ranked_results.sort(key=lambda x: (-x['score'], x['url']))
-
+        
         # Take top K
         top_results = ranked_results[:top_k]
-
         
         # Format output
         return {
@@ -576,7 +601,7 @@ def main():
         reviews_index_path='input/reviews_index.json',
         brand_index_path='input/brand_index.json',
         origin_index_path='input/origin_index.json',
-        documents_path='rearranged_products.jsonl',
+        documents_path='input/rearranged_products.jsonl',
         synonyms_path='input/origin_synonyms.json'
     )
     

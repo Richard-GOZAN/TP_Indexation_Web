@@ -80,7 +80,7 @@ def main():
         reviews_index_path='input/reviews_index.json',
         brand_index_path='input/brand_index.json',
         origin_index_path='input/origin_index.json',
-        documents_path='rearranged_products.jsonl',
+        documents_path='input/rearranged_products.jsonl',
         synonyms_path='input/origin_synonyms.json'
     )
     
@@ -150,8 +150,8 @@ def main():
                 'description_tf': 1.0,
                 'title_exact_match': 10.0,
                 'description_exact_match': 5.0,
-                'review_score': 5.0,  # Increased
-                'review_count': 2.0,  # Increased
+                'review_score': 5.0,  
+                'review_count': 2.0,  
                 'early_position': 1.0,
                 'brand_match': 5.0
             }
