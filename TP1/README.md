@@ -17,18 +17,13 @@ Python web crawler for extracting product information. Prioritizes product pages
 - Configurable request delay
 - JSONL output format
 
-## Installation
-
-```bash
-cd TP1
-pip install -r requirements.txt
-```
 
 ## Usage
 
 ### Basic
 
 ```bash
+cd TP1
 python crawler.py
 ```
 
