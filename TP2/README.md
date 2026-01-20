@@ -1,5 +1,8 @@
 # TP2 - Web Indexing: Inverted Index Builder
 
+![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
+![Status](https://img.shields.io/badge/status-completed-green.svg)
+
 Indexer system for e-commerce product data, creating inverted indexes to enable efficient search capabilities.
 
 
@@ -502,14 +505,6 @@ indexer.py
 └── main()                              # CLI entry point
 ```
 
-
-
-## Author
-
-**Name**: Richard GOZAN
-**Institution**: ENSAI  
-**Course**: Web Indexing  
-**Year**: 2026
 
 ---
 
